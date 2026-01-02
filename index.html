@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drogaria Orama | Atacadão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#003366', 
+                            light: '#004C99',
+                            dark: '#001a33',
+                        },
+                        secondary: {
+                            DEFAULT: '#FFCC00',
+                            hover: '#FFD700',
+                            light: '#ffe066'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('data:image/svg+xml,%3Csvg width=\\'60\\' height=\\'60\\' viewBox=\\'0 0 60 60\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'none\\' fill-rule=\\'evenodd\\'%3E%3Cg fill=\\'%23003366\\' fill-opacity=\\'0.05\\'%3E%3Cpath d=\\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 antialiased overflow-x-hidden bg-gray-50 w-full">
+
+    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-500 bg-transparent text-white py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="relative group">
+                <span class="text-2xl font-bold tracking-tighter uppercase">Drogaria <span class="text-secondary">Orama</span></span>
+                <span class="absolute -bottom-1 left-0 w-0 h-1 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#inicio" class="nav-link hover:text-secondary transition-colors font-medium">Início</a>
+                <a href="#sobre" class="nav-link hover:text-secondary transition-colors font-medium">Sobre Nós</a>
+                <a href="#servicos" class="nav-link hover:text-secondary transition-colors font-medium">Serviços</a>
+                <a href="#contato" class="nav-link hover:text-secondary transition-colors font-medium">Contato</a>
+                
+                <a href="https://wa.me/556299974714" target="_blank" class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white px-6 py-2.5 rounded-full flex items-center gap-2 transition-all shadow-lg hover:shadow-green-500/50 transform hover:-translate-y-1 font-bold group">
+                    <svg class="w-5 h-5 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>WhatsApp</span>
+                </a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none p-2 rounded-lg hover:bg-white/10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 top-full bg-primary-dark/95 backdrop-blur-md shadow-xl border-t border-white/10 transition-all">
+            <div class="flex flex-col p-6 space-y-4 text-center">
+                <a href="#inicio" class="text-white text-lg hover:text-secondary">Início</a>
+                <a href="#sobre" class="text-white text-lg hover:text-secondary">Sobre Nós</a>
+                <a href="#servicos" class="text-white text-lg hover:text-secondary">Serviços</a>
+                <a href="#contato" class="text-white text-lg hover:text-secondary">Contato</a>
+                <a href="https://wa.me/556299974714" target="_blank" class="bg-secondary text-primary-dark py-3 rounded-xl font-bold uppercase tracking-wide">
+                    Chamar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative h-screen flex items-center justify-center bg-cover bg-center overflow-hidden" style="background-image: url('img/fachada.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/80 to-primary/40"></div>
+        
+        <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl animate-pulse"></div>
+
+        <div class="relative z-10 container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center h-full pt-20">
+            <div class="text-left space-y-6 reveal-item">
+                <span class="inline-block py-1 px-3 rounded-full bg-secondary/20 text-secondary border border-secondary/50 text-sm font-bold tracking-wider mb-2">
+                    ABERTO 24 HORAS
+                </span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight drop-shadow-lg">
+                    Cuidando de <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-200">Você Sempre.</span>
+                </h1>
+                <p class="text-xl text-gray-200 font-light max-w-lg leading-relaxed">
+                    O melhor preço da região com o atendimento que sua família merece. Venha conhecer nosso Atacadão.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="https://wa.me/556299974714" class="bg-secondary hover:bg-white hover:text-primary-dark text-primary-dark font-bold text-lg px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(255,204,0,0.4)] transition-all hover:-translate-y-1 text-center">
+                        Fazer Pedido Agora
+                    </a>
+                    <a href="#sobre" class="border border-white/30 hover:bg-white/10 text-white font-medium text-lg px-8 py-4 rounded-xl backdrop-blur-sm transition-all text-center">
+                        Saiba Mais
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block"></div> 
+        </div>
+
+        <a href="#sobre" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce opacity-70 hover:opacity-100">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </a>
+    </section>
+
+    <section id="sobre" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gray-50 skew-x-12 transform origin-top hidden lg:block"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center mb-16 reveal-item">
+                <h2 class="text-sm font-bold text-secondary uppercase tracking-widest mb-2">Nossa História</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-primary-dark mb-6">Atacadão Drogaria Orama</h3>
+                <div class="w-24 h-1.5 bg-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6 text-lg text-gray-600 leading-relaxed reveal-item delay-200">
+                    <p>
+                        Fundada em 2009, somos uma referência no varejo farmacêutico. Nosso foco é claro: <strong>levar as melhores marcas com os menores preços</strong> aos nossos clientes.
+                    </p>
+                    <p>
+                        Criamos um novo conceito de farmácia, onde saúde, beleza e bem-estar se encontram. Fortalecemos o compromisso de cuidar das pessoas, incentivando a prevenção e promovendo qualidade de vida.
+                    </p>
+                    <div class="bg-primary/5 p-6 rounded-2xl border-l-4 border-primary mt-8">
+                        <p class="italic font-medium text-primary-dark">
+                            "Ética, responsabilidade, qualidade, transparência e compromisso com a vida orientam todas as nossas ações."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative reveal-item delay-400">
+                    <div class="absolute inset-0 bg-secondary rounded-3xl transform rotate-3 opacity-20"></div>
+                    <div class="bg-primary-dark text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden transform transition-transform hover:-translate-y-2 duration-500">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                        <div class="absolute bottom-10 left-10 w-20 h-20 bg-secondary/20 rounded-full blur-xl"></div>
+                        
+                        <h4 class="text-2xl font-bold mb-6 text-secondary">Nossa Missão</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="bg-secondary text-primary-dark rounded-full p-1 mr-3 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>
+                                <span>Servir com qualidade personalizada.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-secondary text-primary-dark rounded-full p-1 mr-3 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>
+                                <span>Experiência única de compra.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-secondary text-primary-dark rounded-full p-1 mr-3 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span>
+                                <span>Ambiente agradável e acolhedor.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-24 bg-hero-pattern relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20 reveal-item">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary-dark">O que oferecemos</h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Soluções completas para sua saúde e bem-estar em um só lugar.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+                <div class="group bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 border border-gray-100 relative overflow-hidden reveal-item delay-100">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary"></div>
+                    <div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300 text-primary">
+                         <svg class="w-10 h-10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <g fill="currentColor"> <path fill="none" d="M0 0H24V24H0z" /> <path d="M19 2v2h-2v3c1.657 0 3 1.343 3 3v11c0 .552-.448 1-1 1H5c-.552 0-1-.448-1-1V10c0-1.657 1.343-3 3-3V4H5V2h14zm-2 7H7c-.552 0-1 .448-1 1v10h12V10c0-.552-.448-1-1-1zm-4 2v2h2v2h-2.001L13 17h-2l-.001-2H9v-2h2v-2h2zm2-7H9v3h6V4z" /> </g> </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary-dark mb-4">Medicamentos</h3>
+                    <p class="text-gray-600 leading-relaxed">Linha completa de genéricos, similares e referência. Garantia de procedência e economia.</p>
+                </div>
+
+                <div class="group bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 border border-gray-100 relative overflow-hidden reveal-item delay-200">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary to-yellow-400"></div>
+                    <div class="w-20 h-20 bg-secondary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-primary-dark transition-colors duration-300 text-primary">
+                        <svg class="w-10 h-10" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 442 442"> <g> <path d="M231.5,50.5c0-5.79-4.71-10.5-10.5-10.5c-5.79,0-10.5,4.71-10.5,10.5S215.21,61,221,61C226.79,61,231.5,56.29,231.5,50.5z" /> <path d="M346,163.682h-60V122c0-5.522-4.478-10-10-10h-10V10c0-5.523-4.478-10-10-10h-70c-5.523,0-10,4.477-10,10v102h-10 c-5.523,0-10,4.478-10,10v41.682H96c-11.028,0-20,8.972-20,20V422c0,11.028,8.972,20,20,20h250c11.028,0,20-8.972,20-20V183.682 C366,172.653,357.028,163.682,346,163.682z M196,20h50v92h-50V20z M96,422V183.682h70c5.523,0,10-4.477,10-10V132h35v71.682h-85 c-5.523,0-10,4.478-10,10V392c0,5.522,4.477,10,10,10h190c5.522,0,10-4.478,10-10v-60.892c0-5.522-4.478-10-10-10s-10,4.478-10,10 V382H136V223.682h75V352c0,5.522,4.477,10,10,10c5.523,0,10-4.478,10-10V223.682h75V297c0,5.522,4.478,10,10,10s10-4.478,10-10 v-83.318c0-5.522-4.478-10-10-10h-85V132h35v41.682c0,5.523,4.478,10,10,10h70L346.002,422H96z" /> </g> </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary-dark mb-4">Perfumaria</h3>
+                    <p class="text-gray-600 leading-relaxed">As melhores marcas de cosméticos, higiene e beleza para você se sentir bem todos os dias.</p>
+                </div>
+
+                <div class="group bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 border border-gray-100 relative overflow-hidden reveal-item delay-300">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-primary-light"></div>
+                    <div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300 text-primary">
+                        <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="6" r="4" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M19 2C19 2 21 3.2 21 6C21 8.8 19 10 19 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M17 4C17 4 18 4.6 18 6C18 7.4 17 8 17 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M17.9975 18C18 17.8358 18 17.669 18 17.5C18 15.0147 14.4183 13 10 13C5.58172 13 2 15.0147 2 17.5C2 19.9853 2 22 10 22C12.231 22 13.8398 21.8433 15 21.5634" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary-dark mb-4">Atendimento</h3>
+                    <p class="text-gray-600 leading-relaxed">Farmacêuticos prontos para orientar e tirar dúvidas com a atenção que você precisa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row reveal-item">
+                
+                <div class="lg:w-2/5 bg-primary-dark text-white p-12 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+                    
+                    <h2 class="text-3xl font-bold mb-8 text-secondary relative z-10">Fale Conosco</h2>
+                    
+                    <div class="space-y-8 relative z-10">
+                        <div class="flex items-start">
+                            <div class="bg-white/10 p-3 rounded-lg mr-4">
+                                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-300 text-sm uppercase tracking-wide">Visite-nos</h3>
+                                <p class="mt-1 font-medium">Av. Aderup, 204<br>Cidade Jardim, Goiânia - GO</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-white/10 p-3 rounded-lg mr-4">
+                                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-300 text-sm uppercase tracking-wide">Telefone</h3>
+                                <p class="mt-1 text-xl font-bold text-secondary">(62) 9997-4714</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-white/10 p-3 rounded-lg mr-4">
+                                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-300 text-sm uppercase tracking-wide">Email</h3>
+                                <p class="mt-1">drogariaorama@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-3/5 h-96 lg:h-auto bg-gray-200">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.574677271456!2d-49.2965!3d-16.6975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDQxJzUxLjAiUyA0OcKwMTcnNDcuNCJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" 
+                        class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-500" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-4 uppercase">Drogaria Orama</h2>
+            <p class="text-gray-400 mb-8">CNPJ: 10.467.598/0001-87</p>
+            
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#inicio" class="text-gray-400 hover:text-secondary transition-colors">Início</a>
+                <a href="#sobre" class="text-gray-400 hover:text-secondary transition-colors">Sobre</a>
+                <a href="#contato" class="text-gray-400 hover:text-secondary transition-colors">Contato</a>
+            </div>
+
+            <p class="text-sm text-gray-600">© 2025 Todos os direitos reservados.</p>
+            <button id="open-privacy" class="mt-4 text-xs text-gray-600 hover:text-white underline transition-colors">
+                Política de Privacidade
+            </button>
+        </div>
+    </footer>
+
+    <div id="privacy-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity opacity-0">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full transform scale-95 transition-transform duration-300 relative overflow-hidden">
+            <div class="bg-primary p-6 text-white">
+                <h3 class="text-xl font-bold">Política de Privacidade</h3>
+                <button id="close-privacy" class="absolute top-6 right-6 text-white/70 hover:text-white text-2xl font-bold">×</button>
+            </div>
+            <div class="p-8 text-sm text-gray-600 space-y-4 max-h-[60vh] overflow-y-auto">
+                <p>Esta Política de Privacidade descreve como a Drogaria Orama coleta, usa e protege as informações pessoais que você pode fornecer através deste site.</p>
+                <p><strong>Coleta de Dados:</strong> Este site é institucional e não coleta dados pessoais sensíveis automaticamente. Informações fornecidas via WhatsApp são regidas pelos termos daquela plataforma.</p>
+                <p><strong>Uso das Informações:</strong> Quaisquer dados fornecidos voluntariamente serão utilizados apenas para responder às suas solicitações e dúvidas.</p>
+                <p><strong>Segurança:</strong> Adotamos medidas adequadas para proteger suas informações contra acesso não autorizado.</p>
+            </div>
+            <div class="p-4 bg-gray-50 text-right">
+                <button id="close-privacy-btn" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">Entendi</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
